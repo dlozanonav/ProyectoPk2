@@ -12,7 +12,12 @@ body {
     color: #000;
     padding: 20px;
     background-color: white;
+    padding: 0px 20px;
+    
 }
+h2 {
+    padding-left: 20px;
+  }
 
 /*---------------------------------------------*/
 /*                 Contenedor                  */
@@ -30,6 +35,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 200px);
     grid-template-rows: repeat(4, 200px);
+    border: 1px solid black;
+    background-color: rgb(180, 180, 180);
 }
 #escenario {
    flex: 0.65;
@@ -43,13 +50,54 @@ flex: 1;
 /*---------------------------------------------*/
 /*                 Tablero                    */
 /*---------------------------------------------*/
-.celda {
-    width: 200px;
-    height: 200px;
+#tablero .celda {
+    width: 20px;
+    height: 20px;
     border: 1px solid red;
 }
-div:not(#contenedor) {
-    border: 1px solid black;
-    background-color: aliceblue;
+.celda{
+    width: 20px;
+    height: 20px;
 }
+#escenario ,#elementos, #acciones {
+    border: 1px solid black;
+    background-color: rgb(180, 180, 180);
+}
+#inicio {
+    background-color: rgb(0, 255, 0);
+}
+#meta{
+    background-color: rgb(255, 0, 0);
+}
+#tierra{
+    background-color: rgb(189, 128, 15);
+}
+#agua{
+    background-color: rgb(0, 0, 255);
+}
+#pared{
+    background-color: rgb(128, 128, 128);
+}
+div .pintura:hover{
+    width: 30px;
+    height: 30px;
+}
+div .selected{
+    width: 30px;
+    height: 30px;
+}
+div .selected + h3{
+    color: red;
+
+}
+
 /*---------------------------------------------*/
+/*                  Formato                    */
+/*---------------------------------------------*/
+.horizontal {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+ 
