@@ -20,20 +20,20 @@
             <div id="escenario">
                 <h2>Escenario</h2>
                 <div class="horizontal">
-                    <div id="inicio" class="celda pintura selected"></div><h3>Inicio</h3>
+                    <div id="inicio" onclick="javascript:elegirPintura(this,true,0);" class="celda pintura selected"></div><h3>Inicio</h3>
                 </div>
 
                 <div class="horizontal">
-                    <div id="meta" class="celda pintura"></div><h3>Meta</h3>
+                    <div id="meta" onclick="javascript:elegirPintura(this,true,0);" class="celda pintura"></div><h3>Meta</h3>
                 </div>
                 <div class="horizontal">
-                    <div id="tierra" class="celda pintura"></div><h3>Tierra</h3>
+                    <div id="tierra" onclick="javascript:elegirPintura(this,true,0);" class="celda pintura"></div><h3>Tierra</h3>
                 </div>
                 <div class="horizontal">
-                    <div id="agua" class="celda pintura"></div><h3>Agua</h3>
+                    <div id="agua" onclick="javascript:elegirPintura(this,true,2);" class="celda pintura"></div><h3>Agua</h3>
                 </div>
                 <div class="horizontal">
-                    <div id="pared" class="celda pintura"></div><h3>Pared</h3>
+                    <div id="pared" onclick="javascript:elegirPintura(this,true,3);" class="celda pintura"></div><h3>Pared</h3>
                 </div>
             </div>
 
@@ -46,6 +46,17 @@
                 </div>
 
         </div>
+            <script>
+                var spriteGlobal = "";
+
+            function elegirPintura(elemento, superficie, indice) {
+                    console.log("elemento: " + elemento);
+                    console.log("superficie: "+ superficie);
+                    console.log("indice: " + indice);
+
+            }
+
+            </script>
 
 </body>
 </html>
