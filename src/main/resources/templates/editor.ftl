@@ -46,16 +46,21 @@
                 </div>
 
         </div>
+
             <script>
                 var spriteGlobal = "";
 
-            function elegirPintura(elemento, superficie, indice) {
-                    console.log("elemento: " + elemento);
-                    console.log("superficie: "+ superficie);
-                    console.log("indice: " + indice);
-
-            }
-
+                    function elegirPintura(elemento, superficie, indice) {
+                           // console.log("elemento: " + elemento);
+                           // console.log("superficie: "+ superficie);
+                           // console.log("indice: " + indice);
+                            document.querySelectorAll(".pintura")
+                            
+                                .forEach(celda => {
+                                    celda.classList.remove("selected");
+                            });
+                            elemento.classList.add("selected");
+                        }
             </script>
 
 </body>
