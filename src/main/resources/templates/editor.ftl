@@ -54,7 +54,7 @@
 
                 const colsSurfaces= [
                   "#0f0",//Inicio
-                    "#f00",//fin
+                    "#d60404",//fin
                     "#7A420D",//tierra
                     "#0000FF",//agua
                     "#444"//pared
