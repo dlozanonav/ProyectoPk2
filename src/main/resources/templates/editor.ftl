@@ -49,13 +49,29 @@
 
             <script>
 
+                let isMouseDown = false;
+
+                document.addEventListener("mouseup",(e) => {
+                    isMouseDown = false;
+                })
 
                 document.querySelectorAll("#tablero .celda")
                     .forEach(celda => {
                         celda.addEventListener("mousedown", (e) => {
                             console.log("mousedown");
+                            isMouseDown= true;
                             pintarCelda(celda);
                             });
+                        celda.addEventListener("mouseover",(e) => {
+                            console.log("mouseover");
+                            if(isMouseDown){
+                                pintarCelda(celda);
+                            }
+                        });
+                        celda.addEventListener(("mouseup"),(e) => {
+                            console.log("mouseup");
+                            isMouseDown = false;
+                        });
                     });
 
                     function pintarCelda(celda){
