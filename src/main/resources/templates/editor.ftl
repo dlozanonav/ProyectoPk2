@@ -48,7 +48,20 @@
         </div>
 
             <script>
-                var spriteGlobal = "";
+
+
+                document.querySelectorAll("#tablero .celda")
+                    .forEach(celda => {
+                        celda.addEventListener("mousedown", (e) => {
+                            console.log("mousedown");
+                            pintarCelda(celda);
+                            });
+                    });
+
+                    function pintarCelda(celda){
+                        celda.style.backgroundColor = "green"
+                    }
+                        var spriteGlobal = "";
 
                     function elegirPintura(elemento, superficie, indice) {
                            // console.log("elemento: " + elemento);
