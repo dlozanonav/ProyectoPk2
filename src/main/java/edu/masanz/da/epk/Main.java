@@ -40,7 +40,6 @@ public class Main {
         sessionHandler.setSessionCookie(sessionName);// YO
         return sessionHandler;
     }
-
     private static FileSessionDataStore fileSessionDataStore() {
         FileSessionDataStore fileSessionDataStore = new FileSessionDataStore();
         File baseDir = new File(System.getProperty("java.io.tmpdir"));
