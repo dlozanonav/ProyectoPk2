@@ -24,16 +24,16 @@
                 </div>
 
                 <div class="horizontal">
-                    <div id="meta" onclick="javascript:elegirPintura(this,true,0);" class="celda pintura"></div><h3>Meta</h3>
+                    <div id="meta" onclick="javascript:elegirPintura(this,true,1);" class="celda pintura"></div><h3>Meta</h3>
                 </div>
                 <div class="horizontal">
-                    <div id="tierra" onclick="javascript:elegirPintura(this,true,0);" class="celda pintura"></div><h3>Tierra</h3>
+                    <div id="tierra" onclick="javascript:elegirPintura(this,true,2);" class="celda pintura"></div><h3>Tierra</h3>
                 </div>
                 <div class="horizontal">
-                    <div id="agua" onclick="javascript:elegirPintura(this,true,2);" class="celda pintura"></div><h3>Agua</h3>
+                    <div id="agua" onclick="javascript:elegirPintura(this,true,3);" class="celda pintura"></div><h3>Agua</h3>
                 </div>
                 <div class="horizontal">
-                    <div id="pared" onclick="javascript:elegirPintura(this,true,3);" class="celda pintura"></div><h3>Pared</h3>
+                    <div id="pared" onclick="javascript:elegirPintura(this,true,4);" class="celda pintura"></div><h3>Pared</h3>
                 </div>
             </div>
 
@@ -50,6 +50,15 @@
             <script>
 
                 let isMouseDown = false;
+                let idx = 2;
+
+                const colsSurfaces= [
+                  "#0f0",//Inicio
+                    "#f00",//fin
+                    "#7A420D",//tierra
+                    "#0000FF",//agua
+                    "#444"//pared
+                ];
 
                 document.addEventListener("mouseup",(e) => {
                     isMouseDown = false;
@@ -75,9 +84,9 @@
                     });
 
                     function pintarCelda(celda){
-                        celda.style.backgroundColor = "green"
+                        celda.style.backgroundColor = colsSurfaces[idx];
                     }
-                        var spriteGlobal = "";
+
 
                     function elegirPintura(elemento, superficie, indice) {
                            // console.log("elemento: " + elemento);
@@ -89,6 +98,7 @@
                                     celda.classList.remove("selected");
                             });
                             elemento.classList.add("selected");
+                            idx= indice;
                         }
             </script>
 
