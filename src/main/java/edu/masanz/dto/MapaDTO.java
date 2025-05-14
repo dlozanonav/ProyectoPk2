@@ -14,5 +14,10 @@ public class MapaDTO {
         this.orden = orden;
         this.nombre = nombre;
     }
+
+    public String toJson(){
+        return "{\"id\":"+id+",\"orden\":"+orden+",\"nombre\":\""+nombre+"\"}";
+    }
+
 }
 

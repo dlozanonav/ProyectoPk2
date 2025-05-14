@@ -20,7 +20,7 @@
             <div id="escenario">
                 <h2>Escenario</h2>
                 <div class="horizontal">
-                    <div id="inicio" onclick="javascript:elegirPintura(this,true,0);" class="celda pintura selected"></div><h3>Inicio</h3>
+                    <div id="inicio" onclick="javascript:elegirPintura(this,true,0);" class="celda pintura"></div><h3>Inicio</h3>
                 </div>
 
                 <div class="horizontal">
