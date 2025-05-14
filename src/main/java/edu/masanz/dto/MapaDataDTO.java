@@ -50,7 +50,9 @@ public class MapaDataDTO extends MapaDTO {
 
             sb.append("'").append(s).append("',");
         }
-             sb.deleteCharAt(sb.length()-1); //borramos el espacio final que hay
+             sb.deleteCharAt(sb.length()-1); //borramos los dos espacios porq esta el espacio de salto de linea
+
+             sb.deleteCharAt(sb.length()-1); // borramos la comilla tambien
         return surfaces + elements;
     }
 
