@@ -38,13 +38,13 @@ public class MapaDataDTO extends MapaDTO {
         return superficieMapa.toString();
     }
 
-    public String toArray(){
+    public String toArray(String matriz){
         //aqui pasamos el mapa a un formato array para luego que la plantilla entienda los elementos que se encuentran en el mapa
         //'4', '4', '4' , '4' , '4', '0' ,
 
         StringBuilder sb = new StringBuilder();
 
-        String[] a = surfaces.split("\\s+"); //Con \\s+ podemos hacer split con todos los string o caracteres que estan separados, hace split en los espacios, el +e es para q lo haga contodo
+        String[] a = matriz.split("\\s+"); //Con \\s+ podemos hacer split con todos los string o caracteres que estan separados, hace split en los espacios, el +e es para q lo haga contodo
 
         for (String s : a) {
 
@@ -53,7 +53,8 @@ public class MapaDataDTO extends MapaDTO {
              sb.deleteCharAt(sb.length()-1); //borramos los dos espacios porq esta el espacio de salto de linea
 
              sb.deleteCharAt(sb.length()-1); // borramos la comilla tambien
-        return surfaces + elements;
+
+        return sb.toString();
     }
 
     public MapaDataDTO(long id, int orden,
@@ -61,23 +62,33 @@ public class MapaDataDTO extends MapaDTO {
         super(id, orden, nombre);
         this.surfaces = surfaces;
         this.elements = elements;
+
     }
 
     public void setSurfaces(String surfaces) {
+
         this.surfaces = surfaces;
     }
     public void setElements(String elements) {
+
         this.elements = elements;
     }
 
     public String getSurfaces() {
-        return surfaces;
+
+        return toArray(surfaces);
     }
 
     public String getElements() {
-        return elements;
+
+        return toArray(elements);
     }
 
+    public static void main(String[] args) {
+        MapaDataDTO dto = new MapaDataDTO();
+        System.out.println(dto.getSurfaces());
+        System.out.println(dto.getElements());
+        System.out.println("-".repeat(80));
 
-
+    }
 }
