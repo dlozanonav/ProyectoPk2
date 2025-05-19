@@ -99,6 +99,7 @@
                     isMouseDown = false;
                 })
 
+
                 document.querySelectorAll("#tablero .celda")
                     .forEach(celda => {
                         celda.addEventListener("mousedown", (e) => {
